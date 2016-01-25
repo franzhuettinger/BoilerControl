@@ -16,17 +16,50 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#define OK           0 // successfull exection
-#define ERR_UNDEF   -1 // Undefined error
+#ifndef __SENSORSCONFIG_H__
+#define __SENSORSCONFIG_H__
 
 // -----------------------------------------------------------------------------------------------
-/** Control loop.
+const unsigned int  sensor_data_buffer_maximum = 180;
 
-    @return  OK on success, on of ERR_* on error
-*/
-extern int controlLoop( SensorDataRingBuffer * sensorData )
+// -----------------------------------------------------------------------------------------------
+
+/** Analog pin assignement.
+ *
+ *  exp.: sensor_pin_{FUNCTION} = {ARDUINO_PIN_ID}
+ */
+typedef enum analog_pins
 {
-  return OK;
-}
+  sensorPin_00 = A0,
+  sensorPin_01 = A1,
+  sensorPin_02 = A2,
+  sensorPin_03 = A3,
+  sensorPin_04 = A0,
+  sensorPin_05 = A1,
+  sensorPin_06 = A2,
+  sensorPin_07 = A3,
+  sensorPin_08 = A0,
+  sensorPin_09 = A1
+} analog_pins;
 
 // -----------------------------------------------------------------------------------------------
+
+/** Sensor id's for all active sensors.
+ */
+typedef enum ananlog_sensors
+{
+  sensor_00 = 0,
+  sensor_01,
+  sensor_02,
+  sensor_03,
+  sensor_04,
+  sensor_05,
+  sensor_06,
+  sensor_07,
+  sensor_08,
+  sensor_09,
+  sensor_count
+} analog_sensors;
+
+// -----------------------------------------------------------------------------------------------
+#endif
