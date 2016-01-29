@@ -144,7 +144,7 @@ String SensorDataRingBuffer::getSensorValuesForIndexAsCSV( unsigned int index )
 
   for( unsigned char sensor_id = 0; sensor_id < sensor_count; sensor_id++ )
   {
-    csv_string += String( ((float)getSensorValueFromIndex( sensor_id, index )) / 10, 1 );
+    csv_string += String( getSensorValueFromIndex( sensor_id, index ) );
     if( sensor_id < ( sensor_count - 1 ) ) csv_string += ",";
   }
 

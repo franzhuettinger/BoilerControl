@@ -59,15 +59,15 @@ void loop()
   // read analog values, convert them into a temperature value and store them
   // ---------------------------------------------------------------------------
   sensor_history->setValueWithId( sensor_00, ReadTemperatur( sensorPin_00 ) );
-  sensor_history->setValueWithId( sensor_01, ReadTemperatur( sensorPin_01 ) );
-  sensor_history->setValueWithId( sensor_02, ReadTemperatur( sensorPin_02 ) );
-  sensor_history->setValueWithId( sensor_03, ReadTemperatur( sensorPin_03 ) );
-  sensor_history->setValueWithId( sensor_04, ReadTemperatur( sensorPin_04 ) );
-  sensor_history->setValueWithId( sensor_05, ReadTemperatur( sensorPin_05 ) );
-  sensor_history->setValueWithId( sensor_06, ReadTemperatur( sensorPin_06 ) );
-  sensor_history->setValueWithId( sensor_07, ReadTemperatur( sensorPin_07 ) );
-  sensor_history->setValueWithId( sensor_08, ReadTemperatur( sensorPin_08 ) );
-  sensor_history->setValueWithId( sensor_09, ReadTemperatur( sensorPin_09 ) );
+  //sensor_history->setValueWithId( sensor_01, ReadTemperatur( sensorPin_01 ) );
+  //sensor_history->setValueWithId( sensor_02, ReadTemperatur( sensorPin_02 ) );
+  //sensor_history->setValueWithId( sensor_03, ReadTemperatur( sensorPin_03 ) );
+  //sensor_history->setValueWithId( sensor_04, ReadTemperatur( sensorPin_04 ) );
+  //sensor_history->setValueWithId( sensor_05, ReadTemperatur( sensorPin_05 ) );
+  //sensor_history->setValueWithId( sensor_06, ReadTemperatur( sensorPin_06 ) );
+  //sensor_history->setValueWithId( sensor_07, ReadTemperatur( sensorPin_07 ) );
+  //sensor_history->setValueWithId( sensor_08, ReadTemperatur( sensorPin_08 ) );
+  //sensor_history->setValueWithId( sensor_09, ReadTemperatur( sensorPin_09 ) );
 
   sensor_history->commitValueSet();
 
@@ -78,7 +78,7 @@ void loop()
 
   // ---------------------------------------------------------------------------
   Serial.println( String( samples++ ) + ", data: [" + sensor_history->getSensorValuesAsCSV() + "], Ring buffer index: " + String( sensor_history->getIndex() ) );
-  delay( 5 * 1000 );
+  delay( 2 * 1000 );
 }
 
 // -----------------------------------------------------------------------------

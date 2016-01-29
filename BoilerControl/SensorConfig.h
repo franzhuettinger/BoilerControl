@@ -20,7 +20,7 @@
 #define __SENSORSCONFIG_H__
 
 // -----------------------------------------------------------------------------------------------
-const unsigned int  sensor_data_buffer_maximum = 180;
+const unsigned int  sensor_data_buffer_maximum = 700;
 
 // -----------------------------------------------------------------------------------------------
 
@@ -49,15 +49,15 @@ typedef enum analog_pins
 typedef enum ananlog_sensors
 {
   sensor_00 = 0,
-  sensor_01,
-  sensor_02,
-  sensor_03,
-  sensor_04,
-  sensor_05,
-  sensor_06,
-  sensor_07,
-  sensor_08,
-  sensor_09,
+//  sensor_01,
+//  sensor_02,
+//  sensor_03,
+//  sensor_04,
+//  sensor_05,
+//  sensor_06,
+//  sensor_07,
+//  sensor_08,
+//  sensor_09,
   sensor_count
 } analog_sensors;
 

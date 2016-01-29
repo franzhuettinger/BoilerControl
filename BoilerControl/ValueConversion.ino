@@ -20,10 +20,29 @@
 
 /** Converts the given value to temperature
  */
-char ConvertVoltageToTemperature( unsigned char sensor_value )
+char ConvertVoltageToTemperature( unsigned int sensor_value )
 {
-  float voltage = sensor_value * (5.0 / 1023.0) * 10; // 0.1V
-  return voltage;
+  //TODO: this has to be improved!
+  
+  float U = 5.0;
+  float Rf = 115;
+  float R0 = 100;
+  float Ut = sensor_value * (U / 1023.0);
+  float Uf = U - Ut;
+  float Rt = Rf * Ut / Uf;
+
+  // adjustment  
+  float c = 0.0;
+  if( Rt <= 110.0 ) c = 10.0 / (103.90-100.0);
+  else if( Rt > 110.0 && Rt <= 145.69) c = 40.0 / (115.54-100.0);
+  else if( Rt > 145.69) c = 200.0 / (175.84-100.0);
+
+  // temperature
+  float T = (Rt - R0) * c;
+  
+  Serial.println( "Ut = " + String( Ut ) + "V, sensor_value = " + String( sensor_value ) + ", Rt = " + String(Rt) + " Ohm, T = "+ String(T) + " C"); 
+  
+  return T;
 }
 
 // -----------------------------------------------------------------------------
