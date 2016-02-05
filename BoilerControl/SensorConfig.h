@@ -20,7 +20,11 @@
 #define __SENSORSCONFIG_H__
 
 // -----------------------------------------------------------------------------------------------
-const unsigned int  sensor_data_buffer_maximum = 700;
+#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+  const unsigned int  sensor_data_buffer_maximum = 700;
+#else
+  const unsigned int  sensor_data_buffer_maximum = 250;
+#endif
 
 // -----------------------------------------------------------------------------------------------
 
@@ -31,15 +35,7 @@ const unsigned int  sensor_data_buffer_maximum = 700;
 typedef enum analog_pins
 {
   sensorPin_00 = A0,
-  sensorPin_01 = A1,
-  sensorPin_02 = A2,
-  sensorPin_03 = A3,
-  sensorPin_04 = A0,
-  sensorPin_05 = A1,
-  sensorPin_06 = A2,
-  sensorPin_07 = A3,
-  sensorPin_08 = A0,
-  sensorPin_09 = A1
+  sensorPin_count
 } analog_pins;
 
 // -----------------------------------------------------------------------------------------------
@@ -49,15 +45,6 @@ typedef enum analog_pins
 typedef enum ananlog_sensors
 {
   sensor_00 = 0,
-//  sensor_01,
-//  sensor_02,
-//  sensor_03,
-//  sensor_04,
-//  sensor_05,
-//  sensor_06,
-//  sensor_07,
-//  sensor_08,
-//  sensor_09,
   sensor_count
 } analog_sensors;
 
